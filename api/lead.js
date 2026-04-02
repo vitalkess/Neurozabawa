@@ -10,7 +10,7 @@ export default async function handler(req, res) {
   if (!email) return res.status(400).json({ error: 'No email' });
 
   const token = '8551413220:AAHU6uSIetHOvlnpcMU0sdf8tLMDfCJOYrc';
-  const chatId = '8551413220';
+  const chatId = '5071692828';
 
   await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
     method: 'POST',
