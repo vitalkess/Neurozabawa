@@ -9,8 +9,8 @@ export default async function handler(req, res) {
   const { email } = req.body || {};
   if (!email) return res.status(400).json({ error: 'No email' });
 
-  const token = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.TELEGRAM_CHAT_ID;
+  const token = '8551413220:AAHU6uSIetHOvlnpcMU0sdf8tLMDfCJOYrc';
+  const chatId = '8551413220';
 
   await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
     method: 'POST',
