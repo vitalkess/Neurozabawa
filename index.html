@@ -1178,6 +1178,8 @@
     const email = document.getElementById('emailInput').value;
     const stripeUrl = 'https://buy.stripe.com/aFadRb7IMaPYgPb1Lm1RC05?locale=pl&prefilled_email=' + encodeURIComponent(email);
 
+    localStorage.setItem('sp_email', email);
+
     try {
       await fetch('https://api.telegram.org/bot8551413220:AAHU6uSIetHOvlnpcMU0sdf8tLMDfCJOYrc/sendMessage', {
         method: 'POST',
@@ -1187,6 +1189,14 @@
           text: '📧 <b>Нова заявка!</b>\n\n' + email,
           parse_mode: 'HTML',
         }),
+      });
+    } catch (_) {}
+
+    try {
+      await fetch('/api/sendpulse', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, listId: '634497' }),
       });
     } catch (_) {}
 

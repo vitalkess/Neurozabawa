@@ -279,6 +279,20 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // SendPulse — додати в список Покупців
+    (async () => {
+      const email = localStorage.getItem('sp_email');
+      if (!email) return;
+      localStorage.removeItem('sp_email');
+      try {
+        await fetch('/api/sendpulse', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, listId: '634501' }),
+        });
+      } catch (_) {}
+    })();
   </script>
 </body>
 </html>
