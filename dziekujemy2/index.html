@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dziękujemy za zakup! — NeiroBook</title>
+  <title>Dziękujemy! — NeiroBook</title>
   <!-- Meta Pixel Code -->
   <script>
   !function(f,b,e,v,n,t,s)
@@ -28,327 +28,338 @@
 
     :root {
       --cream: #F5EFE6;
-      --sand: #E8DCCB;
-      --sand-light: #F9F5F0;
-      --sage-light: #E9F0EA;
       --sage: #7A9A86;
       --navy: #1E2A38;
       --terracotta: #C46A4A;
       --terracotta-dark: #A65439;
       --gold: #C6A75E;
+      --coral: #E8533A;
     }
 
     body {
       font-family: 'Nunito', sans-serif;
       background: var(--cream);
-      min-height: 100vh;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      padding: 2rem 1rem;
+      color: var(--navy);
     }
 
-    .card {
-      background: #fff;
-      border-radius: 1.5rem;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-      max-width: 480px;
-      width: 100%;
-      overflow: hidden;
+    /* ===== HERO — SUCCESS ===== */
+    .hero {
+      background: var(--sage);
+      padding: 2.5rem 1.5rem 2rem;
       text-align: center;
     }
 
-    .card-top {
-      background: var(--sage);
-      padding: 2.5rem 2rem 2rem;
-    }
-
-    .checkmark {
-      width: 72px;
-      height: 72px;
+    .check-wrap {
+      width: 64px; height: 64px;
       border-radius: 50%;
       background: rgba(255,255,255,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1.25rem;
-      animation: pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1rem;
     }
 
-    @keyframes pop {
-      from { transform: scale(0); opacity: 0; }
-      to   { transform: scale(1); opacity: 1; }
+    .hero h1 {
+      font-size: 1.75rem; font-weight: 900;
+      color: #fff; margin-bottom: 0.375rem;
     }
 
-    .card-top h1 {
-      font-size: 1.75rem;
-      font-weight: 900;
-      color: #fff;
-      line-height: 1.2;
-      margin-bottom: 0.5rem;
-    }
-
-    .card-top p {
-      color: rgba(255,255,255,0.85);
-      font-size: 0.9375rem;
-      font-weight: 500;
-      line-height: 1.6;
-    }
-
-    .card-body {
-      padding: 2rem 2rem 2.5rem;
-    }
-
-    .steps {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin-bottom: 2rem;
-      text-align: left;
-    }
-
-    .step {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-    }
-
-    .step-num {
-      width: 2rem;
-      height: 2rem;
-      border-radius: 50%;
-      background: var(--sage-light);
-      color: var(--sage);
-      font-weight: 900;
-      font-size: 0.875rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .step-text strong {
-      display: block;
-      color: var(--navy);
-      font-weight: 700;
-      font-size: 0.9375rem;
-    }
-
-    .step-text span {
-      color: rgba(30,42,56,0.65);
-      font-size: 0.8125rem;
-      font-weight: 500;
-    }
-
-    .divider {
-      height: 1px;
-      background: rgba(198,167,94,0.15);
-      margin-bottom: 1.75rem;
-    }
-
-    .note {
-      background: var(--sand-light);
-      border: 1px solid rgba(198,167,94,0.25);
-      border-radius: 0.75rem;
-      padding: 1rem 1.25rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      text-align: left;
-      margin-bottom: 2rem;
-    }
-
-    .note-icon {
-      color: var(--gold);
-      flex-shrink: 0;
-      margin-top: 0.1rem;
-    }
-
-    .note p {
-      font-size: 0.8125rem;
-      color: rgba(30,42,56,0.7);
-      font-weight: 500;
-      line-height: 1.55;
+    .hero p {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.9375rem; font-weight: 500;
+      margin-bottom: 1.5rem;
     }
 
     .btn-download {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: #fff; color: var(--sage);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900; font-size: 1rem;
+      text-decoration: none;
+      padding: 0.9375rem 2rem;
+      border-radius: 0.875rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      transition: transform 0.15s;
       width: 100%;
-      background: var(--sage);
+      max-width: 380px;
+      justify-content: center;
+    }
+
+    .btn-download:active { transform: scale(0.97); }
+
+    .hero-note {
+      margin-top: 0.875rem;
+      font-size: 0.8125rem;
+      color: rgba(255,255,255,0.65);
+      font-weight: 500;
+    }
+
+    /* ===== UPSELL ===== */
+    .upsell {
+      padding: 2rem 1.25rem 3rem;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .upsell-badge {
+      display: inline-flex; align-items: center; gap: 0.375rem;
+      background: rgba(232,83,58,0.1);
+      color: var(--coral);
+      font-weight: 800; font-size: 0.8125rem;
+      padding: 0.375rem 0.875rem;
+      border-radius: 2rem;
+      margin-bottom: 0.875rem;
+    }
+
+    .upsell-title {
+      font-size: 1.5rem; font-weight: 900;
+      color: var(--navy); line-height: 1.25;
+      margin-bottom: 0.375rem;
+    }
+
+    .upsell-sub {
+      font-size: 0.9375rem; font-weight: 500;
+      color: rgba(30,42,56,0.6);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ===== PRODUCT CARDS ===== */
+    .product {
+      background: #fff;
+      border-radius: 1.25rem;
+      overflow: hidden;
+      margin-bottom: 0.875rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      display: flex;
+      align-items: stretch;
+    }
+
+    .product-img {
+      width: 120px;
+      min-height: 130px;
+      flex-shrink: 0;
+      overflow: hidden;
+      background: #f0f0f0;
+    }
+
+    .product-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-info {
+      padding: 1rem 1rem 1rem 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.25rem;
+    }
+
+    .product-label {
+      font-size: 0.6875rem; font-weight: 800;
+      color: var(--coral); text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .product-name {
+      font-size: 1rem; font-weight: 900;
+      color: var(--navy); line-height: 1.2;
+    }
+
+    .product-desc {
+      font-size: 0.8125rem; font-weight: 500;
+      color: rgba(30,42,56,0.55);
+      margin-top: 0.125rem;
+    }
+
+    .product-price {
+      display: flex; align-items: center; gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .price-old {
+      font-size: 0.875rem; font-weight: 700;
+      color: rgba(30,42,56,0.3);
+      text-decoration: line-through;
+    }
+
+    .price-new {
+      font-size: 1.25rem; font-weight: 900;
+      color: var(--coral);
+    }
+
+    .price-badge {
+      font-size: 0.625rem; font-weight: 800;
+      background: rgba(232,83,58,0.12);
+      color: var(--coral);
+      padding: 0.2rem 0.4rem;
+      border-radius: 0.25rem;
+    }
+
+    /* ===== OFFER BOX ===== */
+    .offer-box {
+      background: var(--navy);
+      border-radius: 1.25rem;
+      padding: 1.5rem;
+      text-align: center;
+      margin-top: 1.25rem;
+    }
+
+    .offer-savings {
+      font-size: 0.8125rem; font-weight: 700;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 0.375rem;
+    }
+
+    .offer-savings span {
+      color: #fff;
+      text-decoration: line-through;
+    }
+
+    .offer-price {
+      display: flex; align-items: flex-end;
+      justify-content: center; gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .offer-price-old {
+      font-size: 1.125rem; font-weight: 700;
+      color: rgba(255,255,255,0.3);
+      text-decoration: line-through;
+      margin-bottom: 0.25rem;
+    }
+
+    .offer-price-new {
+      font-size: 3rem; font-weight: 900;
+      color: #fff; line-height: 1;
+    }
+
+    .offer-price-currency {
+      font-size: 1.25rem; font-weight: 700;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 0.5rem;
+    }
+
+    .btn-cta {
+      display: flex; align-items: center;
+      justify-content: center; gap: 0.5rem;
+      background: var(--coral);
       color: #fff;
       font-family: 'Nunito', sans-serif;
-      font-weight: 800;
-      font-size: 1.0625rem;
+      font-weight: 900; font-size: 1.0625rem;
       text-decoration: none;
-      padding: 1rem 2rem;
-      border-radius: 0.75rem;
-      box-shadow: 0 4px 16px rgba(122,154,134,0.35);
+      padding: 1.0625rem 1.5rem;
+      border-radius: 0.875rem;
+      box-shadow: 0 4px 20px rgba(232,83,58,0.4);
       transition: background 0.2s, transform 0.1s;
       margin-bottom: 1rem;
     }
 
-    .btn-download:hover { background: #678a74; }
-    .btn-download:active { transform: scale(0.97); }
+    .btn-cta:hover { background: #d4472e; }
+    .btn-cta:active { transform: scale(0.97); }
 
-    .btn-back {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: transparent;
-      color: rgba(30,42,56,0.45);
-      font-family: 'Nunito', sans-serif;
-      font-weight: 700;
-      font-size: 0.875rem;
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: 0.75rem;
-      transition: color 0.2s;
-    }
-
-    .btn-back:hover { color: var(--navy); }
-
-    footer {
-      padding: 1.25rem;
-      background: var(--navy);
-      color: rgba(249,245,240,0.5);
+    .no-thanks {
       font-size: 0.75rem;
+      color: rgba(255,255,255,0.3);
+      cursor: pointer;
+      text-decoration: underline;
       font-weight: 500;
     }
+
+    .no-thanks:hover { color: rgba(255,255,255,0.5); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.75rem;
+      color: rgba(30,42,56,0.35);
+      font-weight: 500;
+    }
+
+    footer a { color: inherit; }
   </style>
 </head>
 <body>
-  <div class="card">
-    <div class="card-top">
-      <div class="checkmark">
-        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-      </div>
-      <h1>Dziękujemy za zakup!</h1>
-      <p>Płatność została przyjęta.<br>Za chwilę otrzymasz wiadomość e-mail.</p>
-      <a href="https://drive.google.com/file/d/15MGwNFrWL0IMKTNxgJRAkRKTDnj7HHKH/view?usp=sharing" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.25rem;background:rgba(255,255,255,0.2);color:#fff;font-family:'Nunito',sans-serif;font-weight:800;font-size:1rem;text-decoration:none;padding:0.875rem 1.75rem;border-radius:0.75rem;border:2px solid rgba(255,255,255,0.5);transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Pobierz NeiroBook (PDF)
-      </a>
+
+  <!-- SUCCESS HERO -->
+  <div class="hero">
+    <div class="check-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
     </div>
-
-    <div class="card-body">
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div class="step-text">
-            <strong>Sprawdź skrzynkę e-mail</strong>
-            <span>Wysyłamy PDF na adres podany przy zakupie.</span>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div class="step-text">
-            <strong>Pobierz NeiroBook</strong>
-            <span>Otwórz wiadomość i kliknij link do pobrania.</span>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div class="step-text">
-            <strong>Zacznij zabawę już dziś!</strong>
-            <span>Wydrukuj lub otwórz na tablecie — i baw się z dzieckiem.</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="divider"></div>
-
-      <div class="note">
-        <span class="note-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-        </span>
-        <p>Nie widzisz maila? Sprawdź folder <strong>Spam</strong> lub <strong>Oferty</strong>. Jeśli nadal nic — napisz do nas: <a href="mailto:neurozabawapl@gmail.com" style="color:inherit;font-weight:700;">neurozabawapl@gmail.com</a></p>
-      </div>
-
-      <a href="https://drive.google.com/file/d/15MGwNFrWL0IMKTNxgJRAkRKTDnj7HHKH/view?usp=sharing" target="_blank" class="btn-download">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Pobierz NeiroBook (PDF)
-      </a>
-
-      <a href="../index.html" class="btn-back">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        Wróć na stronę główną
-      </a>
-    </div>
-
-    <!-- UPSELL -->
-    <div style="padding: 0 1.5rem 2rem;">
-
-      <div style="text-align:center; margin-bottom:1.5rem;">
-        <div style="display:inline-block; background:rgba(198,167,94,0.15); border-radius:2rem; padding:0.375rem 1rem; font-size:0.8125rem; font-weight:700; color:var(--gold); margin-bottom:0.75rem;">🎁 Tylko dla Ciebie</div>
-        <h2 style="font-size:1.375rem; font-weight:900; color:var(--navy); line-height:1.3;">Oto Twoje 2 prezenty!</h2>
-      </div>
-
-      <!-- Prezent 1 -->
-      <div style="background:#fff; border-radius:1rem; border:2px solid rgba(198,167,94,0.3); padding:1.25rem; margin-bottom:1rem;">
-        <div style="display:flex; align-items:center; gap:0.625rem; margin-bottom:0.875rem;">
-          <span style="font-size:1.375rem;">🎁</span>
-          <div>
-            <div style="font-size:0.6875rem; font-weight:700; color:var(--gold); text-transform:uppercase; letter-spacing:0.05em;">Prezent 1</div>
-            <div style="font-weight:800; color:var(--navy); font-size:1rem;">30 kart edukacyjnych</div>
-          </div>
-        </div>
-        <a href="#" style="display:inline-flex; align-items:center; gap:0.5rem; background:var(--sage); color:#fff; font-family:'Nunito',sans-serif; font-weight:800; font-size:0.9375rem; text-decoration:none; padding:0.75rem 1.5rem; border-radius:0.75rem; width:100%; justify-content:center; box-sizing:border-box;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          🎁 Pobierz prezent
-        </a>
-      </div>
-
-      <!-- Prezent 2 — oferta -->
-      <div style="background:#fff; border-radius:1rem; border:2px solid var(--terracotta); padding:1.25rem; margin-bottom:1.25rem; position:relative;">
-        <div style="position:absolute; top:-0.75rem; left:50%; transform:translateX(-50%); background:var(--terracotta); color:#fff; font-size:0.6875rem; font-weight:800; padding:0.25rem 0.875rem; border-radius:2rem; white-space:nowrap;">🎁 Prezent 2 — Ekskluzywny rabat -70%</div>
-
-        <div style="margin-top:0.5rem;">
-          <!-- Produkt 1 -->
-          <div style="padding:0.875rem 0; border-bottom:1px solid rgba(198,167,94,0.15);">
-            <div style="font-weight:800; color:var(--navy); font-size:0.9375rem; margin-bottom:0.25rem;">Uczymy się liczyć</div>
-            <div style="font-size:0.8125rem; color:rgba(30,42,56,0.6); font-weight:500; margin-bottom:0.5rem;">Ponad 100 stron ciekawych, ilustrowanych zadań</div>
-            <div style="display:flex; align-items:center; gap:0.625rem;">
-              <span style="font-size:0.9375rem; color:rgba(30,42,56,0.35); text-decoration:line-through; font-weight:700;">79 zł</span>
-              <span style="font-size:1.25rem; font-weight:900; color:var(--terracotta);">29 zł</span>
-            </div>
-          </div>
-          <!-- Produkt 2 -->
-          <div style="padding:0.875rem 0;">
-            <div style="font-weight:800; color:var(--navy); font-size:0.9375rem; margin-bottom:0.25rem;">Dodatkowe zadania</div>
-            <div style="font-size:0.8125rem; color:rgba(30,42,56,0.6); font-weight:500; margin-bottom:0.5rem;">50+ stron wspierających rozwój neuronów</div>
-            <div style="display:flex; align-items:center; gap:0.625rem;">
-              <span style="font-size:0.9375rem; color:rgba(30,42,56,0.35); text-decoration:line-through; font-weight:700;">79 zł</span>
-              <span style="font-size:1.25rem; font-weight:900; color:var(--terracotta);">29 zł</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- CTA -->
-        <div style="background:rgba(196,106,74,0.06); border-radius:0.75rem; padding:1rem; text-align:center; margin-top:0.25rem;">
-          <div style="display:flex; align-items:center; justify-content:center; gap:0.75rem; margin-bottom:0.875rem;">
-            <span style="font-size:1rem; color:rgba(30,42,56,0.35); text-decoration:line-through; font-weight:700;">176 zł</span>
-            <span style="font-size:2rem; font-weight:900; color:var(--terracotta); line-height:1;">49 zł</span>
-          </div>
-          <a href="#" style="display:flex; align-items:center; justify-content:center; gap:0.5rem; background:var(--terracotta); color:#fff; font-family:'Nunito',sans-serif; font-weight:800; font-size:1rem; text-decoration:none; padding:0.9375rem 1.5rem; border-radius:0.75rem; box-shadow:0 4px 16px rgba(196,106,74,0.3);">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            Kup teraz za 49 zł
-          </a>
-        </div>
-      </div>
-
-    </div>
-    <!-- END UPSELL -->
-
-    <footer>© <span id="year"></span> NeiroBook. Wszelkie prawa zastrzeżone.</footer>
+    <h1>Dziękujemy za zakup! 🎉</h1>
+    <p>Płatność przyjęta — Twoja książka czeka</p>
+    <a href="https://drive.google.com/file/d/15MGwNFrWL0IMKTNxgJRAkRKTDnj7HHKH/view?usp=sharing" target="_blank" class="btn-download">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Pobierz NeiroBook (PDF)
+    </a>
+    <p class="hero-note">📧 Wysyłamy też na Twój e-mail</p>
   </div>
+
+  <!-- UPSELL -->
+  <div class="upsell">
+    <div class="upsell-badge">🎁 Ekskluzywna oferta — tylko teraz</div>
+    <h2 class="upsell-title">Dołącz 2 zestawy<br>i oszczędź 109 zł</h2>
+    <p class="upsell-sub">Specjalna cena dostępna tylko na tej stronie</p>
+
+    <!-- Produkt 1 -->
+    <div class="product">
+      <div class="product-img">
+        <img src="../images/uczymy-sie-liczyc.jpg" alt="Uczymy się liczyć" onerror="this.parentNode.style.background='linear-gradient(135deg,#e8f4fb,#c8e6f7)';this.style.display='none'">
+      </div>
+      <div class="product-info">
+        <div class="product-label">📚 Bestseller</div>
+        <div class="product-name">Uczymy się liczyć</div>
+        <div class="product-desc">100 stron ilustrowanych zadań</div>
+        <div class="product-price">
+          <span class="price-old">79 zł</span>
+          <span class="price-new">29 zł</span>
+          <span class="price-badge">-63%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Produkt 2 -->
+    <div class="product">
+      <div class="product-img">
+        <img src="../images/dodatkowe-zadania.jpg" alt="Dodatkowe zadania" onerror="this.parentNode.style.background='linear-gradient(135deg,#fef3e8,#fde1c0)';this.style.display='none'">
+      </div>
+      <div class="product-info">
+        <div class="product-label">⭐ Nowość</div>
+        <div class="product-name">Dodatkowe zadania</div>
+        <div class="product-desc">50 stron — rozwój neuronów</div>
+        <div class="product-price">
+          <span class="price-old">79 zł</span>
+          <span class="price-new">29 zł</span>
+          <span class="price-badge">-63%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA BOX -->
+    <div class="offer-box">
+      <p class="offer-savings">Zamiast <span>158 zł</span> płacisz tylko:</p>
+      <div class="offer-price">
+        <span class="offer-price-old">158 zł</span>
+        <span class="offer-price-new">49</span>
+        <span class="offer-price-currency">zł</span>
+      </div>
+      <a href="#" class="btn-cta">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        Tak! Chcę oba zestawy za 49 zł
+      </a>
+      <p class="no-thanks" onclick="window.location.href='../index.html'">Nie, rezygnuję z oszczędności</p>
+    </div>
+  </div>
+
+  <footer>
+    © <span id="year"></span> NeiroBook &nbsp;·&nbsp;
+    <a href="mailto:neurozabawapl@gmail.com">neurozabawapl@gmail.com</a>
+  </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // SendPulse — додати в список Покупців
+    // SendPulse — Покупці
     (async () => {
       const email = localStorage.getItem('sp_email');
       if (!email) return;
