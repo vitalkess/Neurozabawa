@@ -40,7 +40,6 @@
       min-height: 100vh;
     }
 
-    /* ===== HERO ===== */
     .hero {
       background: var(--sage);
       padding: 1.25rem 1.25rem 1.5rem;
@@ -55,31 +54,8 @@
     .hero p {
       color: rgba(255,255,255,0.8);
       font-size: 0.875rem; font-weight: 500;
-      margin-bottom: 1rem;
+      margin-bottom: 0;
     }
-
-    .downloads {
-      display: flex;
-      flex-direction: column;
-      gap: 0.625rem;
-      max-width: 380px;
-      margin: 0 auto;
-    }
-
-    .btn-download {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: #fff; color: var(--sage);
-      font-family: 'Nunito', sans-serif;
-      font-weight: 900; font-size: 0.9375rem;
-      text-decoration: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 0.875rem;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-      transition: transform 0.15s;
-      justify-content: center;
-    }
-
-    .btn-download:active { transform: scale(0.97); }
 
     .hero-note {
       margin-top: 0.75rem;
@@ -88,74 +64,99 @@
       font-weight: 500;
     }
 
-    /* ===== PRODUCTS ===== */
+    /* ===== CONTENT ===== */
     .content {
       padding: 1.25rem 1.25rem 2rem;
       max-width: 480px;
       margin: 0 auto;
     }
 
-    .section-title {
-      font-size: 1rem; font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 0.75rem;
-      text-align: center;
-      opacity: 0.6;
-    }
-
-    .products-wrap {
+    .section {
       background: #fff;
       border-radius: 1.25rem;
-      overflow: hidden;
+      padding: 1.25rem;
       box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      margin-bottom: 1rem;
     }
 
-    .product {
-      display: flex;
-      align-items: stretch;
-    }
-
-    .product + .product {
-      border-top: 1px solid rgba(30,42,56,0.08);
-    }
-
-    .product-img {
-      width: 100px;
-      min-height: 90px;
-      flex-shrink: 0;
-      overflow: hidden;
-      background: #f0f0f0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .product-img img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      display: block;
-    }
-
-    .product-info {
-      padding: 0.5rem 0.75rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 0.2rem;
-      flex: 1;
-    }
-
-    .product-label {
-      font-size: 0.6875rem; font-weight: 800;
+    .section-label {
+      font-size: 0.7rem; font-weight: 800;
       color: var(--coral); text-transform: uppercase;
       letter-spacing: 0.06em;
+      margin-bottom: 0.375rem;
     }
 
-    .product-desc {
-      font-size: 0.875rem; font-weight: 700;
+    .section-title {
+      font-size: 1.2rem; font-weight: 900;
       color: var(--navy);
-      line-height: 1.35;
+      margin-bottom: 0.25rem;
+      line-height: 1.2;
+    }
+
+    .section-desc {
+      font-size: 0.8125rem; font-weight: 600;
+      color: rgba(30,42,56,0.5);
+      margin-bottom: 1rem;
+    }
+
+    .btn-group-label {
+      font-size: 0.8125rem; font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .btn-age {
+      display: inline-flex; align-items: center; gap: 0.375rem;
+      background: var(--cream);
+      color: var(--navy);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800; font-size: 0.875rem;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      border: 2px solid rgba(30,42,56,0.12);
+      transition: all 0.15s;
+    }
+
+    .btn-age:hover {
+      background: var(--sage);
+      color: #fff;
+      border-color: var(--sage);
+    }
+
+    .btn-age:active { transform: scale(0.97); }
+
+    .btn-exercise {
+      display: inline-flex; align-items: center; gap: 0.375rem;
+      background: var(--coral);
+      color: #fff;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800; font-size: 0.875rem;
+      text-decoration: none;
+      padding: 0.5rem 1.25rem;
+      border-radius: 2rem;
+      transition: all 0.15s;
+      box-shadow: 0 3px 10px rgba(232,83,58,0.3);
+    }
+
+    .btn-exercise:hover { background: #d4472e; }
+    .btn-exercise:active { transform: scale(0.97); }
+
+    .divider {
+      border: none;
+      border-top: 1px solid rgba(30,42,56,0.08);
+      margin: 0.875rem 0;
     }
 
     /* ===== FOOTER ===== */
@@ -168,50 +169,62 @@
     }
 
     footer a { color: inherit; }
+
+    /* Download icon */
+    .dl-icon { flex-shrink: 0; }
   </style>
 </head>
 <body>
 
-  <!-- HERO -->
   <div class="hero">
     <h1>Dziękujemy za zakup zestawu! 🎉</h1>
-    <p>Płatność przyjęta — oba pliki gotowe do pobrania</p>
-    <div class="downloads">
-      <a href="https://neurozabawa.space/aditionsColors.pdf-1.pdf" download class="btn-download">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Pobierz: Additions Colors (PDF)
-      </a>
-      <a href="https://neurozabawa.space/aditionalactivities.pdf-1.pdf" download class="btn-download">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Pobierz: Additional Activities (PDF)
-      </a>
-    </div>
+    <p>Płatność przyjęta — Twoje pliki są gotowe do pobrania</p>
     <p class="hero-note">📧 Wysłano na e-mail (sprawdź spam). Pobierz od razu lub napisz: <a href="mailto:neurozabawapl@gmail.com" style="color:#fff;text-decoration:underline;">neurozabawapl@gmail.com</a></p>
   </div>
 
-  <!-- CONTENT -->
   <div class="content">
-    <p class="section-title">Twój zestaw zawiera:</p>
-    <div class="products-wrap">
-      <div class="product">
-        <div class="product-img">
-          <img src="../images/uczymy-sie-liczyc.png" alt="Additions Colors" onerror="this.parentNode.style.background='linear-gradient(135deg,#e8f4fb,#c8e6f7)';this.style.display='none'">
-        </div>
-        <div class="product-info">
-          <div class="product-label">📚 Bestseller</div>
-          <div class="product-desc">Uczymy się liczyć – ponad 100 stron ciekawych, ilustrowanych zadań.</div>
-        </div>
+
+    <!-- Uczymy się liczyć -->
+    <div class="section">
+      <div class="section-label">📚 Bestseller</div>
+      <div class="section-title">Uczymy się liczyć</div>
+      <div class="section-desc">100 stron ciekawych, ilustrowanych zadań</div>
+
+      <div class="btn-group-label">Pobierz według wieku:</div>
+      <div class="btn-group">
+        <a href="https://neurozabawa.space/N2-3.pdf" download class="btn-age">
+          <svg class="dl-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          2–3 lata
+        </a>
+        <a href="https://neurozabawa.space/1-3.pdf" download class="btn-age">
+          <svg class="dl-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          2–4 lat
+        </a>
+        <a href="https://neurozabawa.space/3-5.pdf" download class="btn-age">
+          <svg class="dl-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          3–5 lat
+        </a>
+        <a href="https://neurozabawa.space/N5-7.pdf" download class="btn-age">
+          <svg class="dl-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          4–7 lat
+        </a>
       </div>
-      <div class="product">
-        <div class="product-img">
-          <img src="../images/dodatkowe-zadania.png" alt="Additional Activities" onerror="this.parentNode.style.background='linear-gradient(135deg,#fef3e8,#fde1c0)';this.style.display='none'">
-        </div>
-        <div class="product-info">
-          <div class="product-label">⭐ Nowość</div>
-          <div class="product-desc">50+ stron dodatkowe zadania wspierające rozwój neuronów</div>
-        </div>
+
+      <hr class="divider">
+
+      <div class="btn-group-label">Dodatkowe zadania wspierające rozwój neuronów:</div>
+      <div class="btn-group">
+        <a href="https://neurozabawa.space/aditionalactivities.pdf-1.pdf" download class="btn-exercise">
+          <svg class="dl-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Ćwiczenia 1
+        </a>
+        <a href="https://neurozabawa.space/aditionsColors.pdf-1.pdf" download class="btn-exercise">
+          <svg class="dl-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Ćwiczenia 2
+        </a>
       </div>
     </div>
+
   </div>
 
   <footer>
@@ -222,7 +235,6 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // SendPulse — Покупці
     (async () => {
       const email = localStorage.getItem('sp_email');
       if (!email) return;
