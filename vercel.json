@@ -2,5 +2,16 @@
   "buildCommand": "",
   "outputDirectory": ".",
   "installCommand": "",
-  "framework": null
+  "framework": null,
+  "headers": [
+    {
+      "source": "/(.*\\.pdf)",
+      "headers": [
+        {
+          "key": "Content-Disposition",
+          "value": "attachment"
+        }
+      ]
+    }
+  ]
 }
