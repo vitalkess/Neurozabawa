@@ -4,6 +4,40 @@ export const config = {
   api: { bodyParser: false },
 };
 
+// ===== SendPulse =====
+const SP_CLIENT_ID = 'sp_id_cb7103ee1b39a4e7e6409a97c69c4e8b';
+const SP_CLIENT_SECRET = 'sp_sk_cee022063fb75ff1dd6a1e09bd959d39';
+
+async function getSpToken() {
+  const res = await fetch('https://api.sendpulse.com/oauth/access_token', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      grant_type: 'client_credentials',
+      client_id: SP_CLIENT_ID,
+      client_secret: SP_CLIENT_SECRET,
+    }),
+  });
+  const data = await res.json();
+  return data.access_token;
+}
+
+async function addToSendPulse(email, listId) {
+  try {
+    const token = await getSpToken();
+    await fetch(`https://api.sendpulse.com/addressbooks/${listId}/emails`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+      body: JSON.stringify({ emails: [{ email }] }),
+    });
+  } catch (e) {
+    console.error('SendPulse error:', e);
+  }
+}
+
 async function getRawBody(req) {
   return new Promise((resolve, reject) => {
     const chunks = [];
@@ -81,6 +115,18 @@ export default async function handler(req, res) {
       `📧 ${email}`;
 
     await sendTelegram(message);
+
+    // ===== SendPulse: добавляем в список по сумме =====
+    if (email && email !== '—') {
+      const amount = session.amount_total; // в центах
+      if (amount === 4700) {
+        // Zestaw (бандл) — 47 zł
+        await addToSendPulse(email, '641462');
+      } else {
+        // NeiroBook и остальные
+        await addToSendPulse(email, '634501');
+      }
+    }
   }
 
   res.status(200).json({ received: true });
